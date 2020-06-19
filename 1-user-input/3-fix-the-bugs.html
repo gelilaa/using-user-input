@@ -7,7 +7,7 @@
 
   <script>
     debugger;
-
+    
     // describe the challenge
     alert('repeat a string x number of times.');
 
@@ -19,13 +19,15 @@
     // program logic
     let repeated = '';
     let i = 0;
-    while (i !== repetitions) {
+    while (i < repetitions) {
       repeated += stringToRepeat;
-      i++;
+      i ++;
+    
     }
+    
 
     // respond to user
-    alert(repeated);
+    alert(repeated);  
 
     // log for dev
     console.log('-- interaction log --');
@@ -38,6 +40,7 @@
 </head>
 
 <body>
+ 
 </body>
 
 </html>
