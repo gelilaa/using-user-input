@@ -5,17 +5,75 @@
   <meta charset="utf8">
   <title>after refactor: 1</title>
 
-  <style> </style>
+  <style> 
+    .centered {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
 
-  <script id='logic'> </script>
+  <script id='logic'> 
+  /**
+     * reorganizes the values by shuffling the parameters
+     * @param {string} first
+     * @param {string} second
+     * @param {string} third
+     * @returns {string}
+     */
+  function shuffleString(first, second, third){
+    debugger;
+    if (typeof first!== 'string') { throw new TypeError(); }
+    if (typeof second !== 'string') { throw new TypeError(); }
+    if (typeof third !== 'string') { throw new TypeError(); }
 
-  <script id='tests'></script>
+    const shuffled = `${second}, ${first}, ${third}`;
+    if (typeof shuffled !== 'string') { throw new TypeError(); }
 
-  <script id=' handler'></script>
+    return shuffled;
+  }
+  </script>
+
+  <script id='tests'>
+   const _1_expect = 'second, first, third';
+    const _1_actual = shuffleString('first','second','third');
+    console.assert(_1_actual === _1_expect, 'Test 1');
+
+    const _2_expect = 'nice, to see, you';
+    const _2_actual = shuffleString('to see', 'nice', 'you');
+    console.assert(_2_actual === _2_expect, 'Test 2');
+
+    const _3_expect = 'hello, sunshine, and summer';
+    const _3_actual = shuffleString('sunshine','hello', 'and summer');
+    console.assert(_3_actual === _3_expect, 'Test 3');
+
+
+  </script>
+
+  <script id=' handler'>
+    function shufflerHandler() {
+      debugger;
+
+      const input1 = prompt('first string');
+      string1 = String(input1);
+      const input2 = prompt('second string');
+      string2 = String(input2);
+      const  input3 = prompt('third string');
+      string3 = String(input3);
+
+      const shuffle = shuffleString( input1, input2,input3);
+
+
+      alert(`${shuffle}`);
+    }
+  </script>
+  
 </head>
 
 <body>
   <section id='user-interface' class='centered'></section>
+  <button onclick='shufflerHandler()'>shuffle string of words</button>
 </body>
 
 </html>

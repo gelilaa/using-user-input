@@ -7,14 +7,17 @@
 
   <script>
     /**
-       * performs one of three logical operations
-       * @param {any} x - the left operand
-       * @param {string} operator - indicates which operator to use
-       * @param {any} x - the right operand
-       * @returns {any}
-       */
+     * performs one of three logical operations
+     * @param {any} x - the left operand
+     * @param {string} operator - indicates which operator to use
+     * @param {any} x - the right operand
+     * @returns {any}
+     */
     function operateLogically(x, operator, y) {
-      if (typeof operator !== 'string') { throw new TypeError(); }
+      debugger;
+      if (typeof operator !== 'string') {
+        throw new TypeError();
+      }
 
       // return directly from the conditional since the return value can be any type
       //  no need to check before returning
@@ -25,7 +28,7 @@
       } else if (operator === 'nullish') {
         return x ?? y;
       } else {
-        throw new Error(`"${operator}" is not a valid operator`);
+        alert(`"${operator}" is not a valid operator`);
       }
     }
 

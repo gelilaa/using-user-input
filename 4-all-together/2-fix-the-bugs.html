@@ -26,16 +26,16 @@
       if (typeof highest !== 'number') { throw new TypeError(); }
 
       let sumOfEvens = 0;
-      for (let i = lowest; i === highest; i++) {
+      for (let i = lowest; i <= highest; i++) {
         if (i % 2 !== 0) {
           continue;
         }
 
-        sumOfEvens + i;
+        sumOfEvens += i;
       }
 
-      if (typeof sum !== 'boolean') { throw new TypeError() };
-      return sum;
+      if (typeof sumOfEvens !== 'number') { throw new TypeError() };
+      return sumOfEvens;
     }
   </script>
 
@@ -76,7 +76,7 @@
 
       const sum = sumAllEvens(num2, num1);
 
-      alert(sum);
+      alert(`sum of all  Even numbers between ${num1} and ${num2} is ${sum}`);
 
       console.log('-- interaction log --');
       console.log('input1:', typeof input1, '\n', input1);
